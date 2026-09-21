@@ -1,0 +1,7 @@
+﻿
+Algorithm       Hash                                                                   Path                            
+---------       ----                                                                   ----                            
+SHA256          C352535E15BF34D5C2BB8DA3C5E5972A0DCFBAF288217A20836841B804AD3B25       C:\VisualStudio\VinhCommand\r...
+SHA256          659C22759869834781BD84B697E8059319408FA9A179428D01DB8A2EBC3922D2       C:\VisualStudio\VinhCommand\r...
+
+

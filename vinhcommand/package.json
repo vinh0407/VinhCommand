@@ -1,0 +1,30 @@
+{
+  "name": "vinhcommand",
+  "private": true,
+  "version": "1.0.0",
+  "description": "VinhCommand - Cross-platform IDE for Mobile and Desktop",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:mobile": "pnpm --filter @vinhcommand/mobile dev",
+    "dev:desktop": "pnpm --filter @vinhcommand/desktop dev",
+    "dev:desktop:tauri": "pnpm --filter @vinhcommand/desktop tauri:dev",
+    "build:mobile": "pnpm --filter @vinhcommand/mobile build",
+    "build:desktop": "pnpm --filter @vinhcommand/desktop build",
+    "build:desktop:tauri": "pnpm --filter @vinhcommand/desktop tauri:build",
+    "typecheck": "pnpm --filter '*' run typecheck",
+    "lint": "pnpm --filter '*' run lint",
+    "install:all": "pnpm install",
+    "clean": "pnpm --filter '*' run clean || true && rm -rf node_modules packages/*/node_modules apps/*/node_modules packages/*/dist apps/*/dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "oxlint": "^0.2.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

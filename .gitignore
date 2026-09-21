@@ -1,0 +1,48 @@
+# Build directories
+**/build/
+**/.dart_tool/
+**/.gradle/
+**/node_modules/
+**/ephemeral/
+**/captures/
+
+# Large binary files & debug symbols
+*.pdb
+*.obj
+*.o
+*.ilk
+*.idb
+*.exp
+
+# Flutter & Windows Ephemeral
+vinhcommand_desktop/windows/flutter/ephemeral/
+**/ephemeral/**
+
+# Node & web artifacts
+codex_chatgpt_web_engine/node_modules/
+codex_chatgpt_web_engine/dist/
+codex_chatgpt_web_engine/.turbo/
+codex_chatgpt_web_engine/bun.exe
+
+# Android artifacts
+vinhcommand-android/.gradle/
+vinhcommand-android/build/
+vinhcommand-android/app/build/
+vinhcommand-android/local.properties
+vinhcommand-android/.cxx/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*~
+
+# System & temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
