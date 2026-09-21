@@ -1,3 +1,4 @@
+import 'dart:io';
 import '../workflow/project_access.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/vinhcommand_core.dart';
@@ -246,8 +247,12 @@ final agentsProvider = FutureProvider<List<Agent>>((ref) async {
       id: const AgentId('chatgpt-web'),
       name: 'ChatGPT Web Automation',
       version: '1.0',
-      executable: r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine\codex-web-gpt.cmd',
-      path: r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine',
+      executable: Directory(r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine').existsSync()
+          ? r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine\codex-web-gpt.cmd'
+          : r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine\codex-web-gpt.cmd',
+      path: Directory(r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine').existsSync()
+          ? r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine'
+          : r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine',
       status: AgentStatus.available,
       running: false,
       authenticated: true,

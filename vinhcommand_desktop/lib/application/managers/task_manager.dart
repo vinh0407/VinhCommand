@@ -94,9 +94,12 @@ class TaskManager {
       } else if (lowerName.contains('dsh') || lowerName.contains('deepseek')) {
         args = ['-p', task.prompt];
       } else if (lowerName.contains('chatgpt web') || lowerName.contains('chatgpt-web')) {
+        final cliPath = File(r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine\src\cli.ts').existsSync()
+            ? r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine\src\cli.ts'
+            : r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine\src\cli.ts';
         args = agent.executable.toLowerCase().endsWith('.cmd')
             ? ['serve']
-            : ['run', r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine\src\cli.ts', 'serve'];
+            : ['run', cliPath, 'serve'];
         sendPromptToStdin = true;
       } else if (lowerName.contains('cli') || lowerName.contains('terminal')) {
         args = ['/c', task.prompt];

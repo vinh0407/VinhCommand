@@ -342,11 +342,19 @@ class ChatGPTWebAdapter extends BaseAgentAdapter {
     AgentCapability.fileEditing,
   ];
 
+  static String _getBaseDir() {
+    if (Directory(r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine').existsSync()) {
+      return r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine';
+    }
+    return r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine';
+  }
+
   @override
   String _getExecutable() {
-    const cmd = r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine\codex-web-gpt.cmd';
+    final base = _getBaseDir();
+    final cmd = '$base\\codex-web-gpt.cmd';
     if (File(cmd).existsSync()) return cmd;
-    const bun = r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine\bun.exe';
+    final bun = '$base\\bun.exe';
     if (File(bun).existsSync()) return bun;
     return 'bun';
   }
@@ -357,7 +365,7 @@ class ChatGPTWebAdapter extends BaseAgentAdapter {
     if (exe.endsWith('.cmd')) {
       return ['serve', ...additionalArgs];
     }
-    const enginePath = r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine\src\cli.ts';
+    final enginePath = '${_getBaseDir()}\\src\\cli.ts';
     return ['run', enginePath, 'serve', ...additionalArgs];
   }
 }

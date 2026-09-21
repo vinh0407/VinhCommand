@@ -89,6 +89,7 @@ class AgentDiscoveryService {
       name: 'ChatGPT Web (Online)',
       executables: ['codex-web-gpt.cmd', 'bun.exe', 'bun', 'codex-web-gpt-5.0.8-win-x64.exe', 'codex-web-gpt.exe'],
       paths: [
+        r'C:\VisualStudio\VinhCommand\engines\codex_chatgpt_web_engine',
         r'C:\VisualStudio\VinhCommand\codex_chatgpt_web_engine',
         r'$USERPROFILE\.bun\bin',
         r'$USERPROFILE\Downloads\codex-chatgpt-web-main\codex-chatgpt-web-main',
@@ -108,6 +109,7 @@ class AgentDiscoveryService {
       name: 'Gemini Web (Online)',
       executables: ['gemini-web.cmd', 'gemini-web.bat', 'gemini-web.exe'],
       paths: [
+        r'C:\VisualStudio\VinhCommand\engines\gemini_web_engine',
         r'C:\VisualStudio\VinhCommand\gemini_web_engine',
         r'C:\VisualStudio\VinhCommand\releases\Tools',
         r'$USERPROFILE\AppData\Local\Programs\GeminiWeb',

@@ -95,9 +95,15 @@ VinhCommand/
 |   |-- Windows/                  # Standalone Windows executable packages
 |   |-- Install-Android.bat       # Automated ADB installation script
 |   `-- Run-Desktop.bat           # Desktop launcher script
+|-- engines/                      # Local AI Web Automation Engines
+|   |-- codex_chatgpt_web_engine/ # ChatGPT Web CLI & automation daemon
+|   `-- gemini_web_engine/        # Gemini Web CLI runner
 |
-|-- protocol-reference/           # Shared API schema and protocol specifications
-`-- update_releases.ps1           # Release packaging and checksum generation script
+|-- scripts/                      # Verification and packaging scripts
+|   |-- update_releases.ps1       # Distribution bundling and SHA-256 generation
+|   `-- verify.ps1                # Automated end-to-end linting, testing, and build verification
+|
+`-- update_releases.ps1           # Root release packaging script
 ```
 
 ---

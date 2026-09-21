@@ -19,6 +19,10 @@ vinhcommand_desktop/windows/flutter/ephemeral/
 **/ephemeral/**
 
 # Node & web artifacts
+**/engines/**/node_modules/
+**/engines/**/dist/
+**/engines/**/.turbo/
+**/engines/**/bun.exe
 codex_chatgpt_web_engine/node_modules/
 codex_chatgpt_web_engine/dist/
 codex_chatgpt_web_engine/.turbo/
