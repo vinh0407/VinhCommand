@@ -4,6 +4,15 @@ A unified cross-platform development environment and mobile companion system. Vi
 
 ---
 
+## Visual Interface & Demo Showcase
+
+| Desktop IDE Workspace (Windows) | Mobile Companion (Android) |
+| :---: | :---: |
+| <img src="docs/images/desktop_ide_demo.jpg" alt="VinhCommand Desktop IDE" width="560"/> | <img src="docs/images/mobile_app_demo.jpg" alt="VinhCommand Mobile Companion" width="280"/> |
+| *Unified workspace management, real-time terminal output, multi-process runners, and local AI agent integration.* | *Remote code editing with VS Code Dark styling, LAN pairing via QR code, interactive CMD trigger, and AI Master Task history.* |
+
+---
+
 ## System Architecture
 
 VinhCommand is designed with a decoupled, high-efficiency client-host architecture:
@@ -89,6 +98,9 @@ VinhCommand/
 |   |   |   `-- presentation/     # Jetpack Compose UI screens (Home, Connect, Agents)
 |   |   `-- build.gradle.kts      # Android application build script
 |   `-- build.gradle.kts          # Root Gradle configuration
+|
+|-- docs/                         # Documentation assets and visual media
+|   `-- images/                   # UI demo showcases for Desktop and Mobile
 |
 |-- releases/                     # Production build artifacts and deployment scripts
 |   |-- Android/                  # Compiled debug and release APK packages
