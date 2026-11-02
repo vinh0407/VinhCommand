@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pairing Modal - VinhCommand</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body { margin: 0; background: #0d0d0d; color: #cccccc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+* { box-sizing: border-box; }
+button { font-family: inherit; }
+</style>
+</helmet>
+<div style="width: 560px; height: 460px; background: #1e1e1e; border: 1px solid #3e3e42; border-radius: 8px; display: flex; flex-direction: column; box-shadow: 0 20px 48px rgba(0,0,0,0.8); overflow: hidden;">
+  <!-- Header -->
+  <div style="background: #252526; border-bottom: 1px solid #3e3e42; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="font-size: 13px; font-weight: 600; color: #ffffff; font-family: Consolas, monospace; display: flex; align-items: center; gap: 8px;">
+      <span>GHÉP ĐÔI THIẾT BỊ DI ĐỘNG</span>
+      <span style="background: #1b3a4b; color: #61afef; font-size: 10px; padding: 2px 6px; border-radius: 3px; border: 1px solid #2b5b7b;">LAN PAIRED</span>
+    </div>
+    <button style="background: transparent; border: none; color: #858585; cursor: pointer; font-family: Consolas, monospace; font-size: 14px;">[X]</button>
+  </div>
+
+  <!-- Body -->
+  <div style="flex: 1; padding: 24px; display: grid; grid-template-columns: 180px 1fr; gap: 20px; background: #181818; align-items: center;">
+    <!-- QR Code SVG -->
+    <div style="background: #ffffff; padding: 12px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #555555;">
+      <svg style="width: 156px; height: 156px;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" fill="white"></rect>
+        <rect x="8" y="8" width="28" height="28" fill="#111111"></rect>
+        <rect x="12" y="12" width="20" height="20" fill="white"></rect>
+        <rect x="16" y="16" width="12" height="12" fill="#111111"></rect>
+        <rect x="64" y="8" width="28" height="28" fill="#111111"></rect>
+        <rect x="68" y="12" width="20" height="20" fill="white"></rect>
+        <rect x="72" y="16" width="12" height="12" fill="#111111"></rect>
+        <rect x="8" y="64" width="28" height="28" fill="#111111"></rect>
+        <rect x="12" y="68" width="20" height="20" fill="white"></rect>
+        <rect x="16" y="72" width="12" height="12" fill="#111111"></rect>
+        <rect x="42" y="10" width="6" height="6" fill="#111111"></rect>
+        <rect x="52" y="16" width="6" height="6" fill="#111111"></rect>
+        <rect x="42" y="26" width="6" height="6" fill="#111111"></rect>
+        <rect x="10" y="42" width="6" height="6" fill="#111111"></rect>
+        <rect x="22" y="48" width="6" height="6" fill="#111111"></rect>
+        <rect x="44" y="44" width="12" height="12" fill="#0e639c"></rect>
+        <rect x="62" y="44" width="6" height="6" fill="#111111"></rect>
+        <rect x="76" y="52" width="6" height="6" fill="#111111"></rect>
+        <rect x="42" y="64" width="6" height="6" fill="#111111"></rect>
+        <rect x="52" y="76" width="6" height="6" fill="#111111"></rect>
+        <rect x="68" y="72" width="14" height="6" fill="#111111"></rect>
+        <rect x="84" y="84" width="6" height="6" fill="#111111"></rect>
+      </svg>
+      <div style="margin-top: 8px; font-family: Consolas, monospace; font-size: 10px; color: #333333; font-weight: 600;">QUÉT BẰNG MOBILE</div>
+    </div>
+
+    <!-- Info -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-size: 11px; color: #858585; text-transform: uppercase; font-family: Consolas, monospace;">Địa chỉ máy chủ (LAN IP)</div>
+        <div style="background: #121214; border: 1px solid #3e3e42; border-radius: 4px; padding: 8px 10px; font-family: Consolas, monospace; font-size: 13px; color: #4ec9b0; display: flex; justify-content: space-between; align-items: center;">
+          <span>http://192.168.1.15:5174</span>
+          <button style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-size: 11px; padding: 3px 8px; border-radius: 3px; cursor: pointer;">[Chép]</button>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-size: 11px; color: #858585; text-transform: uppercase; font-family: Consolas, monospace;">Mã xác thực PIN</div>
+        <div style="background: #121214; border: 1px solid #3e3e42; border-radius: 4px; padding: 8px 10px; font-family: Consolas, monospace; font-size: 13px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 20px; font-weight: 700; letter-spacing: 4px; color: #d7ba7d;">748 291</span>
+          <span style="font-size: 11px; color: #858585;">Hết hạn sau 04:59</span>
+        </div>
+      </div>
+
+      <div style="font-size: 11px; color: #858585; line-height: 1.45; background: #141416; padding: 8px 10px; border-left: 2px solid #007acc; border-radius: 2px;">
+        Đảm bảo thiết bị di động và máy tính kết nối chung mạng Wi-Fi. Không cần cấu hình Port Forwarding.
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #252526; border-top: 1px solid #3e3e42; padding: 12px 18px; display: flex; justify-content: flex-end; gap: 10px;">
+    <button style="font-family: Consolas, monospace; font-size: 12px; padding: 6px 14px; border-radius: 4px; cursor: pointer; background: transparent; border: 1px solid #3e3e42; color: #cccccc;">[Làm mới mã]</button>
+    <button style="font-family: Consolas, monospace; font-size: 12px; padding: 6px 14px; border-radius: 4px; cursor: pointer; background: #0e639c; border: 1px solid #1177bb; color: #ffffff;">[Hoàn tất ghép nối]</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":560,"height":460}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mobile Companion - VinhCommand</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body { margin: 0; background: #0d0d0d; color: #cccccc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+* { box-sizing: border-box; }
+button { font-family: inherit; }
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #1e1e1e; border: 1px solid #333333; border-radius: 40px; overflow: hidden; display: flex; flex-direction: column; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.7);">
+  <!-- Status Bar / Dynamic Island -->
+  <div style="height: 44px; background: #000000; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; font-size: 13px; font-weight: 600; color: #ffffff;">
+    <span>09:41</span>
+    <div style="width: 100px; height: 22px; background: #111111; border-radius: 20px;"></div>
+    <span>5G [98%]</span>
+  </div>
+
+  <!-- Mobile App Header -->
+  <div style="background: #252526; border-bottom: 1px solid #3e3e42; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 6px; font-family: Consolas, monospace; font-size: 11px;">
+      <span style="width: 7px; height: 7px; border-radius: 50%; background: #4ec9b0; box-shadow: 0 0 6px #4ec9b0;"></span>
+      <span>PC: 192.168.1.15:5174</span>
+    </div>
+    <button style="background: #2d2d30; border: 1px solid #3e3e42; color: #ffffff; font-size: 11px; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-family: Consolas, monospace;">[Quét QR / Đổi]</button>
+  </div>
+
+  <!-- Active File Strip -->
+  <div style="background: #181818; border-bottom: 1px solid #3e3e42; padding: 6px 14px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-family: Consolas, monospace; color: #858585;">
+    <span>lib/<b style="color: #ffffff;">process_runner.dart</b></span>
+    <span style="background: #3a2e1d; color: #d7ba7d; border: 1px solid #5a4220; padding: 1px 5px; font-size: 10px; border-radius: 2px;">[CHƯA LƯU]</span>
+  </div>
+
+  <!-- Code Canvas -->
+  <div style="flex: 1; background: #181818; padding: 10px 12px; font-family: Consolas, monospace; font-size: 12px; line-height: 1.5; overflow-y: auto; color: #d4d4d4;">
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">1</span><span><span style="color: #6a9955; font-style: italic;">// VinhCommand Mobile Companion</span></span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">2</span><span><span style="color: #569cd6;">import</span> <span style="color: #ce9178;">'dart:io'</span>;</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">3</span><span></span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">4</span><span><span style="color: #569cd6;">class</span> <span style="color: #dcdcaa;">DualRunnerService</span> {</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">5</span><span>&nbsp;&nbsp;<span style="color: #569cd6;">final</span> String rootPath;</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">6</span><span>&nbsp;&nbsp;DualRunnerService(<span style="color: #569cd6;">this</span>.rootPath);</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">7</span><span></span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">8</span><span>&nbsp;&nbsp;<span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">spawnGuiCmd</span>(String cmd) {</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">9</span><span>&nbsp;&nbsp;&nbsp;&nbsp;Process.<span style="color: #dcdcaa;">start</span>(</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">10</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ce9178;">'cmd.exe'</span>,</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">11</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<span style="color: #ce9178;">'/c'</span>, <span style="color: #ce9178;">'start'</span>, cmd],</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">12</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode: ProcessStartMode.detached,</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">13</span><span>&nbsp;&nbsp;&nbsp;&nbsp;);</span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">14</span><span>&nbsp;&nbsp;}<span style="display: inline-block; width: 2px; height: 14px; background: #007acc; vertical-align: text-bottom;"></span></span></div>
+    <div style="display: flex; gap: 10px;"><span style="color: #555555; width: 20px; text-align: right;">15</span><span>}</span></div>
+  </div>
+
+  <!-- Keyboard Accessory Bar -->
+  <div style="background: #1e1e1e; border-top: 1px solid #3e3e42; display: flex; overflow-x: auto; padding: 6px 10px; gap: 6px;">
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">Tab</div>
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">{ }</div>
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">( )</div>
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">[ ]</div>
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">;</div>
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">=&gt;</div>
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">&quot;</div>
+    <div style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; font-family: Consolas, monospace; font-size: 13px; padding: 5px 10px; border-radius: 4px; white-space: nowrap; min-width: 32px; text-align: center;">//</div>
+  </div>
+
+  <!-- Dual Action Buttons -->
+  <div style="background: #252526; border-top: 1px solid #3e3e42; padding: 10px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+    <button style="padding: 10px; border-radius: 4px; border: 1px solid #005999; font-size: 12px; font-weight: 600; text-align: center; cursor: pointer; font-family: Consolas, monospace; background: #0e639c; color: #ffffff;">[LƯU LÊN PC *]</button>
+    <button style="padding: 10px; border-radius: 4px; border: 1px solid #6b4d1b; font-size: 12px; font-weight: 600; text-align: center; cursor: pointer; font-family: Consolas, monospace; background: #332617; color: #d7ba7d;">[MỞ CMD]</button>
+  </div>
+
+  <!-- AI Master Task Bar -->
+  <div style="background: #1a1a1d; border-top: 1px solid #383842; padding: 8px 14px 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span style="font-size: 11px; color: #4ec9b0; font-weight: 600; font-family: Consolas, monospace;">[MASTER TASK - 1 PROJECT / 1 TỔNG]</span>
+      <span style="font-size: 10px; color: #858585;">Codex.Antigravity</span>
+    </div>
+    <div style="font-size: 11px; color: #858585; line-height: 1.4; background: #141416; padding: 6px 8px; border-radius: 4px; border-left: 2px solid #4ec9b0;">
+      Đã thêm cơ chế mở CMD độc lập và đồng bộ file realtime từ mobile về PC.
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

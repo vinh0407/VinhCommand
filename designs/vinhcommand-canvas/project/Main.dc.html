@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VinhCommand Desktop IDE Studio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body { margin: 0; background: #1e1e1e; color: #cccccc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+* { box-sizing: border-box; }
+a { color: #569cd6; text-decoration: none; }
+button { font-family: inherit; }
+</style>
+</helmet>
+<div style="width: 1280px; height: 800px; display: flex; flex-direction: column; background: #1e1e1e; overflow: hidden; border: 1px solid #3e3e42;">
+  <!-- Titlebar -->
+  <div style="height: 36px; background: #252526; border-bottom: 1px solid #3e3e42; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; user-select: none;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-weight: 700; font-family: Consolas, monospace; font-size: 13px; color: #007acc; letter-spacing: 0.5px;">VINHCOMMAND</span>
+      <span style="font-size: 11px; color: #858585; font-family: Consolas, monospace;">v2.4.0 [Desktop Studio]</span>
+      <span style="font-size: 10px; padding: 2px 6px; border-radius: 3px; background: #1f3d2b; color: #4ec9b0; border: 1px solid #2e593f; font-family: Consolas, monospace;">[SERVER: ONLINE 5174]</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button style="background: #2d2d30; border: 1px solid #3e3e42; color: #cccccc; padding: 4px 10px; font-size: 11px; border-radius: 3px; cursor: pointer;">[QR Code Di Động]</button>
+      <button style="background: #0e639c; border: 1px solid #1177bb; color: #ffffff; padding: 4px 12px; font-size: 11px; border-radius: 3px; font-weight: 600; cursor: pointer;">[LƯU LÊN PC *]</button>
+    </div>
+  </div>
+
+  <!-- Workspace Body -->
+  <div style="flex: 1; display: flex; overflow: hidden;">
+    <!-- Activity Rail -->
+    <div style="width: 48px; background: #252526; border-right: 1px solid #3e3e42; display: flex; flex-direction: column; align-items: center; padding-top: 12px; gap: 16px;">
+      <div style="width: 32px; height: 32px; border-radius: 4px; background: #2d2d30; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #ffffff; border-left: 2px solid #007acc;">EXP</div>
+      <div style="width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #858585;">RUN</div>
+      <div style="width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #858585;">AI</div>
+      <div style="width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #858585;">SET</div>
+    </div>
+
+    <!-- Explorer Sidebar -->
+    <div style="width: 220px; background: #252526; border-right: 1px solid #3e3e42; display: flex; flex-direction: column;">
+      <div style="padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #858585; letter-spacing: 0.5px; border-bottom: 1px solid #2d2d30;">EXPLORER: VINHCOMMAND</div>
+      <div style="flex: 1; overflow-y: auto; padding: 8px 0; font-family: Consolas, monospace; font-size: 12px; line-height: 22px;">
+        <div style="padding: 0 14px; color: #858585;">v lib/</div>
+        <div style="padding: 0 14px 0 28px; color: #ffffff; background: #2d2d30; border-left: 2px solid #007acc;">main.dart</div>
+        <div style="padding: 0 14px 0 28px; color: #cccccc;">process_runner.dart</div>
+        <div style="padding: 0 14px 0 28px; color: #cccccc;">mobile_hub.dart</div>
+        <div style="padding: 0 14px; color: #858585;">&gt; test/</div>
+        <div style="padding: 0 14px; color: #858585;">pubspec.yaml</div>
+        <div style="padding: 0 14px; color: #858585;">README.md</div>
+      </div>
+    </div>
+
+    <!-- Center Code Canvas -->
+    <div style="flex: 1; display: flex; flex-direction: column; background: #181818;">
+      <!-- Tab Strip -->
+      <div style="height: 32px; background: #252526; display: flex; align-items: center; border-bottom: 1px solid #3e3e42; padding-left: 8px;">
+        <div style="padding: 6px 14px; background: #181818; border-top: 2px solid #007acc; font-family: Consolas, monospace; font-size: 12px; color: #ffffff; display: flex; align-items: center; gap: 8px;">
+          <span>main.dart</span>
+          <span style="font-size: 10px; color: #858585;">x</span>
+        </div>
+        <div style="padding: 6px 14px; font-family: Consolas, monospace; font-size: 12px; color: #858585;">
+          process_runner.dart
+        </div>
+      </div>
+
+      <!-- Editor Text -->
+      <div style="flex: 1; padding: 16px; font-family: Consolas, monospace; font-size: 13px; line-height: 1.6; color: #d4d4d4; overflow-y: auto;">
+        <div><span style="color:#569cd6;">import</span> <span style="color:#ce9178;">'package:flutter/material.dart'</span>;</div>
+        <div><span style="color:#569cd6;">import</span> <span style="color:#ce9178;">'dart:io'</span>;</div>
+        <div><br></div>
+        <div><span style="color:#6a9955;">// VinhCommand Dual-Mode Process Runner (Direct vs Subprocess)</span></div>
+        <div><span style="color:#569cd6;">void</span> <span style="color:#dcdcaa;">main</span>() {</div>
+        <div>&nbsp;&nbsp;WidgetsFlutterBinding.<span style="color:#dcdcaa;">ensureInitialized</span>();</div>
+        <div>&nbsp;&nbsp;<span style="color:#dcdcaa;">runApp</span>(<span style="color:#569cd6;">const</span> <span style="color:#4ec9b0;">VinhCommandApp</span>());</div>
+        <div>}</div>
+        <div><br></div>
+        <div><span style="color:#569cd6;">class</span> <span style="color:#4ec9b0;">ProcessRunnerService</span> {</div>
+        <div>&nbsp;&nbsp;<span style="color:#569cd6;">Future</span>&lt;<span style="color:#569cd6;">void</span>&gt; <span style="color:#dcdcaa;">launchDetachedCmd</span>(String command) <span style="color:#569cd6;">async</span> {</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6a9955;">// Mở cửa sổ CMD độc lập cho các tác vụ cần console riêng</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#569cd6;">await</span> Process.<span style="color:#dcdcaa;">start</span>(<span style="color:#ce9178;">'cmd.exe'</span>, [<span style="color:#ce9178;">'/c'</span>, <span style="color:#ce9178;">'start'</span>, command], mode: ProcessStartMode.detached);</div>
+        <div>&nbsp;&nbsp;}</div>
+        <div>}</div>
+      </div>
+
+      <!-- Bottom Dock: Dual Process Runners -->
+      <div style="height: 220px; background: #1e1e1e; border-top: 1px solid #3e3e42; display: flex; flex-direction: column;">
+        <div style="height: 32px; background: #252526; border-bottom: 1px solid #3e3e42; display: flex; align-items: center; justify-content: space-between; padding: 0 14px;">
+          <div style="display: flex; gap: 14px; font-family: Consolas, monospace; font-size: 11px;">
+            <span style="color: #ffffff; font-weight: 700; border-bottom: 2px solid #007acc; padding-bottom: 4px;">PROCESS RUNNER (DUAL MODE)</span>
+            <span style="color: #858585;">DEBUG CONSOLE</span>
+            <span style="color: #858585;">PORTS (5174, 8080)</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button style="background: #1f3d2b; border: 1px solid #2e593f; color: #4ec9b0; font-family: Consolas, monospace; font-size: 11px; padding: 2px 8px; border-radius: 3px; cursor: pointer;">[Chạy nền (Subprocess)]</button>
+            <button style="background: #3a2e1d; border: 1px solid #5a4220; color: #d7ba7d; font-family: Consolas, monospace; font-size: 11px; padding: 2px 8px; border-radius: 3px; cursor: pointer;">[Mở CMD (Detached)]</button>
+          </div>
+        </div>
+        <div style="flex: 1; padding: 12px 14px; font-family: Consolas, monospace; font-size: 12px; color: #cccccc; overflow-y: auto; background: #181818; line-height: 1.5;">
+          <div style="color: #4ec9b0;">[PID 14208] [SUBPROCESS] flutter run -d windows (watching changes...)</div>
+          <div style="color: #858585;">[INFO] Syncing files to device Windows Desktop...</div>
+          <div style="color: #4ec9b0;">[PID 9102]  [DETACHED CMD] cmd.exe /c start npm run dev (Running in separate window)</div>
+          <div style="color: #858585;">[LOG] WebSocket Mobile Hub: 1 mobile device connected (192.168.1.45)</div>
+          <div style="color: #d7ba7d;">[AUTO-SYNC] File lib/process_runner.dart modified via Mobile Companion -> Saved.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Drawer: Master Task & AI Chat Sync -->
+    <div style="width: 310px; background: #252526; border-left: 1px solid #3e3e42; display: flex; flex-direction: column;">
+      <div style="padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #858585; border-bottom: 1px solid #3e3e42; font-family: Consolas, monospace; display: flex; justify-content: space-between;">
+        <span>AI MASTER TASK</span>
+        <span style="color: #4ec9b0;">1 PROJECT / 1 TỔNG</span>
+      </div>
+      <div style="padding: 12px; background: #1e1e1e; border-bottom: 1px solid #3e3e42;">
+        <div style="font-size: 11px; color: #858585; margin-bottom: 4px;">CURRENT MASTER TASK</div>
+        <div style="font-size: 12px; font-weight: 600; color: #ffffff;">Hoàn thiện chuẩn hóa UI/UX và đồng bộ Mobile</div>
+        <div style="font-size: 11px; color: #4ec9b0; margin-top: 6px; font-family: Consolas, monospace;">[STATUS: IN PROGRESS - 85%]</div>
+      </div>
+      <div style="flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
+        <div style="background: #2d2d30; padding: 10px; border-radius: 4px; border: 1px solid #3e3e42;">
+          <div style="font-size: 10px; color: #858585; margin-bottom: 4px; font-family: Consolas, monospace;">Codex.Antigravity (Desktop)</div>
+          <div style="color: #cccccc; line-height: 1.4;">Đã tích hợp cờ ProcessStartMode.detached để các dự án cần console tương tác tự bật cmd riêng.</div>
+        </div>
+        <div style="background: #1b2f3d; padding: 10px; border-radius: 4px; border: 1px solid #234963;">
+          <div style="font-size: 10px; color: #61afef; margin-bottom: 4px; font-family: Consolas, monospace;">ChatGPT App (Mobile Linked)</div>
+          <div style="color: #cccccc; line-height: 1.4;">Đã xác nhận code lưu từ mobile phản ánh ngay lập tức trên máy tính.</div>
+        </div>
+      </div>
+      <div style="padding: 10px; border-top: 1px solid #3e3e42; background: #1e1e1e;">
+        <input type="text" placeholder="Hỏi AI hoặc tạo task mới..." style="width: 100%; background: #252526; border: 1px solid #3e3e42; border-radius: 4px; padding: 8px 10px; font-size: 11px; color: #ffffff; outline: none;">
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VinhCommand Design System Cover</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    background: #121417;
+    color: #E2E4E9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden;
+  }
+  .cover {
+    position: relative;
+    height: 288px;
+    box-sizing: border-box;
+    padding: 36px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121417;
+    border-bottom: 1px solid #2D3139;
+  }
+  .left-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .badge-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(74, 222, 128, 0.12);
+    color: #4ADE80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    letter-spacing: 0.5px;
+  }
+  .system-title {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 44px;
+    letter-spacing: -0.8px;
+    margin: 0;
+    color: #FFFFFF;
+  }
+  .system-sub {
+    font-size: 14px;
+    line-height: 22px;
+    color: #9EA4B0;
+    max-width: 440px;
+    margin: 0;
+  }
+  .palette-grid {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 2;
+  }
+  .palette-block {
+    width: 68px;
+    height: 180px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-size: 10px;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .bg-primary { background: #4ADE80; color: #0F172A; }
+  .bg-vsblue { background: #007ACC; color: #FFFFFF; }
+  .bg-amber { background: #FACC15; color: #0F172A; }
+  .bg-dark { background: #1B1E23; color: #9EA4B0; border-color: #2D3139; }
+  .bg-overlay { background: #252526; color: #E2E4E9; border-color: #3E4552; }
+
+  /* Background terminal grid effect */
+  .grid-pattern {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(to right, rgba(45, 49, 57, 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(45, 49, 57, 0.3) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="grid-pattern"></div>
+  <div class="left-content">
+    <div class="badge-row">
+      <span class="tag">[SYSTEM v1.2]</span>
+      <span class="tag" style="color: #38BDF8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.12);">[STUDIO DARK]</span>
+    </div>
+    <h1 class="system-title">VinhCommand</h1>
+    <p class="system-sub">Standardized UI/UX design tokens, components, and layout systems for Windows Desktop IDE & Native Android Companion.</p>
+  </div>
+
+  <div class="palette-grid">
+    <div class="palette-block bg-primary">
+      <span>EMERALD</span>
+      <span>#4ADE80</span>
+    </div>
+    <div class="palette-block bg-vsblue">
+      <span>VS BLUE</span>
+      <span>#007ACC</span>
+    </div>
+    <div class="palette-block bg-amber">
+      <span>AMBER</span>
+      <span>#FACC15</span>
+    </div>
+    <div class="palette-block bg-dark">
+      <span>RAISED</span>
+      <span>#1B1E23</span>
+    </div>
+    <div class="palette-block bg-overlay">
+      <span>OVERLAY</span>
+      <span>#252526</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

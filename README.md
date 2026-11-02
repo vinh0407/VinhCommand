@@ -198,6 +198,33 @@ This script performs the following tasks:
 
 ---
 
+## Design System & UI/UX Specification
+
+VinhCommand adheres to a strict terminal-first engineering design language, standardized using `claude-design-system` and `claude-design`:
+
+* **Standardized Design System (`designs/vinhcommand-design-system`)**:
+  * Semantic tokens defined in `project/tokens.json` (`surface`, `surface-code`, `ink`, `brand-vsblue`, `accent-amber`, `accent-danger`, `mono`, `sans`).
+  * Textual component library in `project/components/`:
+    * `Badge`: Clean ASCII/text tags (`[RUN]`, `[CMD]`, `[OK]`, `[DIR]`, `[FILE]`) with zero emoji characters.
+    * `Button`: Primary execution triggers (`[LƯU LÊN PC *]`, `[Chạy nền]`, `[Mở CMD]`, `[Dừng PID]`).
+    * `TerminalCard`: Dual execution status card with live log stream and PID monitors.
+* **Interactive Design Canvas (`designs/vinhcommand-canvas`)**:
+  * Artboard 1: `Main.dc.html` (1280x800) - Full desktop IDE workspace layout with multi-process runner dock and AI Master Task drawer.
+  * Artboard 2: `MobileCompanion.dc.html` (390x844) - Mobile coding companion with quick-symbol toolbar and sync trigger.
+  * Artboard 3: `PairingModal.dc.html` (560x460) - Zero-config LAN pairing dialog with dynamic vector QR code preview.
+
+To validate and launch the design workspaces locally:
+```bash
+# Verify design system and canvas integrity
+node C:\Users\ADMIN\.gemini\config\skills\claude-design-system\scripts\artifact.mjs check designs/vinhcommand-design-system
+node C:\Users\ADMIN\.gemini\config\skills\claude-design\scripts\artifact.mjs check designs/vinhcommand-canvas
+
+# Open live canvas in the background editor
+node C:\Users\ADMIN\.gemini\config\skills\claude-design\scripts\artifact.mjs open designs/vinhcommand-canvas
+```
+
+---
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.

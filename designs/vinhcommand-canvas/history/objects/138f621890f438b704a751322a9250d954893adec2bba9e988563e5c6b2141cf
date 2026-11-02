@@ -1,0 +1,75 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-02T07:40:00Z"
+  },
+  "title": "VinhCommand UI/UX Redesign Canvas",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 800,
+      "title": "Desktop IDE Studio Workspace",
+      "is_interactive": true
+    },
+    "MobileCompanion.dc.html": {
+      "x": 1360,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "Mobile Companion (Android)",
+      "is_interactive": true
+    },
+    "PairingModal.dc.html": {
+      "x": 1830,
+      "y": 0,
+      "w": 560,
+      "h": 460,
+      "title": "LAN Device Pairing Dialog",
+      "is_interactive": true
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "MobileCompanion.dc.html",
+    "PairingModal.dc.html"
+  ],
+  "notes": {
+    "title_desktop": {
+      "x": 0,
+      "y": -80,
+      "text": "VinhCommand Studio (Windows Desktop)",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "title_mobile": {
+      "x": 1360,
+      "y": -80,
+      "text": "VinhCommand Companion (Android)",
+      "kind": "title1",
+      "maxW": 390
+    },
+    "title_pairing": {
+      "x": 1830,
+      "y": -80,
+      "text": "Zero-Config Pairing",
+      "kind": "title1",
+      "maxW": 560
+    }
+  },
+  "designSystems": [
+    {
+      "title": "VinhCommand Design System",
+      "namespace": "vinhcommand",
+      "artifact": "designs/vinhcommand-design-system",
+      "version": null,
+      "copiedAt": "2026-11-02T07:40:00Z"
+    }
+  ]
+}

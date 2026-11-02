@@ -48,5 +48,7 @@ vinhcommand-android/.cxx/
 .DS_Store
 Thumbs.db
 *.log
+.artifact-server.json
+.artifact-server.log
 *.tmp
 *.bak
